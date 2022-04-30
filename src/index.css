@@ -2,14 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.bg-color1 {
+  background-color: #89c74a;
+}
 @import url("https://fonts.googleapis.com/css2?family=Lemonada:wght@400;500;600;700&display=swap");
 
-/* font-family: 'Lemonada', cursive; */
+.header-font {
+  font-family: "Lemonada", cursive;
+  color: #89c74a;
+}
 
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap");
 
 /* font-family: 'Playfair Display', serif; */
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
-
-/* font-family: 'Open Sans', sans-serif; */
+body {
+  font-family: "Open Sans", sans-serif;
+}
