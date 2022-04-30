@@ -20,7 +20,7 @@
 .swiper-button-next {
   background-color: #89c74a;
   color: white !important;
-  padding: 25px !important;
+  padding: 15px !important;
   border-radius: 5px;
   transition: 0.3s;
 }
@@ -34,4 +34,10 @@
   background-color: #89c74a !important;
   width: 15px !important;
   border-radius: 10px !important;
+}
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after,
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  font-size: 15px !important;
 }

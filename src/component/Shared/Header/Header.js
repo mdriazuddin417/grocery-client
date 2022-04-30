@@ -38,9 +38,11 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <nav className="lg:flex justify-between items-center py-5  max-w-7xl mx-auto px-12 ">
+      <nav className="lg:flex justify-between items-center py-8  max-w-7xl mx-auto px-12 ">
         <div className="flex justify-between items-center">
-          <h3 className=" text-3xl header-font font-bold">Grocery Shop</h3>
+          <h3 className=" text-3xl header-font font-bold text-[#89c74a]">
+            Grocery Shop
+          </h3>
           <span className="lg:hidden text-xl" onClick={() => setOpen(!open)}>
             {open ? <RiMenu2Line /> : <MdClose />}
           </span>
