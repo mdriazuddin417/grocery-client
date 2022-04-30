@@ -45,11 +45,7 @@ const Header = () => {
             {open ? <RiMenu2Line /> : <MdClose />}
           </span>
         </div>
-        <ul
-          className={`lg:flex lg:space-x-8 text-xl ${
-            !open ? "bg-red-500" : ""
-          }`}
-        >
+        <ul className={`lg:flex lg:space-x-8 text-xl ${!open ? "" : ""}`}>
           <li>
             <Link to={"/home"}>Home</Link>
           </li>
