@@ -24,9 +24,7 @@ const Product = ({ product }) => {
         </span>
       </p>
       <Link to={"/shipping"}>
-        <button className="bg-color1 text-white rounded-full py-3 px-5 hover:bg-orange-600 duration-300 mt-3 focus:outline-none focus:ring focus:ring-orange-300 ">
-          Update Stock
-        </button>
+        <button className="btn">Update Stock</button>
       </Link>
     </div>
   );

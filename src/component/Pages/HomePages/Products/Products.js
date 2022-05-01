@@ -7,9 +7,7 @@ const Products = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-10 lg:px-12 px-4">
-      <h2 className="font-bold text-center  header-font text-4xl text-[#89c74a]">
-        Our Products
-      </h2>
+      <h2 className="header">Our Products</h2>
       <p className="header-font text-center text-gray-600 pt-5">
         Your favorite choice and healthy food
       </p>
