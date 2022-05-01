@@ -24,6 +24,7 @@ body {
 .header {
   @apply header-font text-black font-bold text-4xl text-center pt-10 text-[#89c74a];
 }
+
 .btn {
   @apply bg-[#89c74a] text-white rounded-full py-3 px-5 hover:bg-orange-600 duration-300 mt-3 focus:outline-none focus:ring focus:ring-orange-300;
 }
