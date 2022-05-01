@@ -13,7 +13,7 @@ const SubBanner = () => {
             <p className="text-xl">
               <span className="font-semibold">100%</span> organic products
             </p>
-            <button className="px-5 py-1 text-white bg-[#fe6d30] rounded-full hover:bg-[#89c74a] duration-300">
+            <button className="px-5 py-1 text-white bg-[#fe6d30] rounded-full hover:bg-[#89c74a] duration-300 focus:outline-none focus:ring focus:ring-[#84b355]">
               Delivered
             </button>
           </div>
@@ -25,7 +25,7 @@ const SubBanner = () => {
             <p className="text-xl">
               <span className="font-semibold">100%</span> Fresh products
             </p>
-            <button className="px-5 py-1 text-white bg-[#fe6d30] rounded-full hover:bg-[#89c74a] duration-300">
+            <button className="px-5 py-1 text-white bg-[#fe6d30] rounded-full hover:bg-[#89c74a] duration-300 focus:outline-none focus:ring focus:ring-[#84b355]">
               Delivered
             </button>
           </div>

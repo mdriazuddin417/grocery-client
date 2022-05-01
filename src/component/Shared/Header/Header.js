@@ -52,7 +52,7 @@ const Header = () => {
             <Link to={"/home"}>Home</Link>
           </li>
           <li>
-            <Link to={"/home"}>Home</Link>
+            <Link to={"/shipping"}>Shipping</Link>
           </li>
           <li>
             <Link to={"/home"}>Home</Link>

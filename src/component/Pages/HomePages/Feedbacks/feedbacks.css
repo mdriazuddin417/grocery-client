@@ -1,0 +1,10 @@
+.feedbacks {
+  background-image: url(../../../../image/bg-4.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.feedback img {
+  width: 80px;
+  height: 80px;
+}

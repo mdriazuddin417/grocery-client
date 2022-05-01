@@ -45,7 +45,7 @@ const Banner = () => {
             <p className="content-header text-2xl ">
               Small Changes Big Difference
             </p>
-            <button className="bg-color1 text-white rounded-full py-3 px-5 hover:bg-orange-600 duration-300">
+            <button className="bg-color1 text-white rounded-full py-3 px-5 hover:bg-orange-600 duration-300 focus:outline-none focus:ring focus:ring-orange-300">
               Visits Now
             </button>
           </div>
@@ -60,7 +60,7 @@ const Banner = () => {
               Grocery Shopping
             </h2>
             <p className="content-header text-2xl ">Save upto 30% off</p>
-            <button className="bg-[#d08126] text-white  rounded-full py-3 px-5 duration-300 hover:bg-[#89c74a]">
+            <button className="bg-[#d08126] text-white  rounded-full py-3 px-5 duration-300 hover:bg-[#89c74a] focus:outline-none focus:ring focus:ring-[#84b355]">
               Visits Now
             </button>
           </div>
@@ -75,7 +75,7 @@ const Banner = () => {
             <p className="content-header text-2xl ">
               Small Changes Big Difference
             </p>
-            <button className="bg-[#e7160e] text-white rounded-full py-3 px-5 hover:bg-orange-600 duration-300">
+            <button className="bg-[#e7160e] text-white rounded-full py-3 px-5 hover:bg-orange-600 duration-300 focus:outline-none focus:ring focus:ring-orange-300">
               Visits Now
             </button>
           </div>
