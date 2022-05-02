@@ -5,10 +5,10 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
 const Helpline = () => {
   return (
-    <div className="max-w-7xl mx-auto lg:px-5 lg:mx-24 py-10 bg-[#89c74a] rounded-xl  ">
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5  ">
-        <div className="flex gap-4 justify-center items-center">
-          <div className="w-[60px] h-[60px] rounded-full bg-white flex justify-center items-center text-[#89c74a] hover:bg-[#fe8801] hover:text-white duration-300">
+    <div className="max-w-7xl mx-auto lg:px-5 px-24 py-10 bg-[#89c74a] rounded-xl  ">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-5  ">
+        <div className="flex justify-center items-center gap-4 ">
+          <div className=" hover:w-[70px] hover:h-[70px] w-[60px] h-[60px] rounded-full bg-white flex justify-center items-center text-[#89c74a]  hover:bg-[#fe8801] hover:text-white duration-300">
             <ImTruck className="text-3xl " />
           </div>
           <div className="space-y-1 text-white">

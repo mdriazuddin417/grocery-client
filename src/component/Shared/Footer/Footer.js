@@ -28,8 +28,8 @@ const Footer = () => {
     "Orders & Returns",
   ];
   return (
-    <div className="footer  max-w-7xl mx-auto lg:px-12 lg:pb-16 text-white   lg:pt-20">
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 gird-cols-1 gap-5 lg:pt-20 z-0">
+    <div className="footer  max-w-7xl mx-auto lg:px-12 lg:pb-16 text-white   lg:pt-20 p-5">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gird-cols-1 gap-5 lg:pt-20 z-0">
         <div className="space-y-3 text-lg">
           <p className="header-font text-3xl text-[#89c74a] font-bold">
             Grocery Shop
@@ -51,13 +51,22 @@ const Footer = () => {
           </div>
 
           <div className="flex space-x-7  ">
-            <a href="#" className="hover:text-[#89c74a] duration-300">
+            <a
+              href="www.facebook.com"
+              className="hover:text-[#89c74a] duration-300"
+            >
               <FaFacebookF />
             </a>
-            <a href="#" className="hover:text-[#89c74a] duration-300">
+            <a
+              href="www.github.com"
+              className="hover:text-[#89c74a] duration-300"
+            >
               <FaGithub />
             </a>
-            <a href="#" className="hover:text-[#89c74a] duration-300">
+            <a
+              href="www.linkedin.com"
+              className="hover:text-[#89c74a] duration-300"
+            >
               <GrLinkedinOption />
             </a>
           </div>
