@@ -1,0 +1,26 @@
+.add-product {
+  width: 50%;
+}
+.add-product input,
+textarea {
+  background: rgba(221, 221, 221, 0.555);
+  padding: 15px 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+.add-product input:focus {
+  outline: none;
+}
+.add-product input:last-child {
+  background: #89c74a;
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 30px;
+}

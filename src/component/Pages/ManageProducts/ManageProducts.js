@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import ManageSingleProduct from "../ManageSingeProduct/ManageSingleProduct";
 
@@ -7,7 +8,9 @@ const ManageProducts = () => {
   return (
     <div className="max-w-7xl mx-auto lg:px-12 lg:py-15 p-5 ">
       <div className="text-right mb-4 ">
-        <button className="btn">Add Product++</button>
+        <Link to="/addproduct">
+          <button className="btn">Add Product++</button>
+        </Link>
       </div>
       <table className="table-fixed border border-[#e9e9e9] w-full">
         <thead>
