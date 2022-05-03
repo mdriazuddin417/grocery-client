@@ -6,17 +6,10 @@ import useProductDetails from "../../hooks/useProductDetail";
 const CheckOut = () => {
   const { id } = useParams();
   const [product, setProduct] = useProductDetails(id);
-  const [updateQuantity, setUpdateQuantity] = useState("");
-  const { name, image, price, selerName, text, quantity } = product;
-  const [increaseQuantity, setIncreaseQuantity] = useState("");
+  const [input, setInput] = useState("");
+  let { name, image, price, selerName, text, quantity } = product;
 
-  const handleQuantity = () => {
-    if (increaseQuantity) {
-      const newQuantity = parseInt(quantity) + parseInt(increaseQuantity);
-      setUpdateQuantity(newQuantity);
-      setIncreaseQuantity("");
-    }
-  };
+  const handleDeliveredBtn = (quantity) => {};
 
   return (
     <div className="max-w-7xl mx-auto lg:pt-20 lg:px-12 lg:pb-12">
@@ -52,10 +45,12 @@ const CheckOut = () => {
             Type : <span className="text-[#89c74a] text-xl ml-14">Fruits</span>
           </p>
           <p className="font-bold">
+            Seller Name :{" "}
+            <span className="text-[#89c74a] text-xl ml-2">{selerName}</span>
+          </p>
+          <p className="font-bold">
             Quantity :{" "}
-            <span className="text-[#89c74a] text-xl ml-6">
-              {updateQuantity || quantity}
-            </span>
+            <span className="text-[#89c74a] text-xl ml-6">{quantity}</span>
           </p>
           <div>
             <label htmlFor="quantity" className="font-bold">
@@ -65,18 +60,21 @@ const CheckOut = () => {
             <input
               type="text"
               placeholder="increase quantity"
-              value={increaseQuantity}
-              onChange={(e) => setIncreaseQuantity(e.target.value)}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
               className="bg-gray-200 py-2 px-1 rounded-lg focus:outline-offset-1 outline-lime-300"
             />
             <button
               className=" bg-[#89c74a] text-white px-3 py-2 rounded focus:ring-2 ring-offset-1 ring-[#8ecf4d]"
-              onClick={handleQuantity}
+              // onClick={handleQuantity}
             >
               Add
             </button>
           </div>
-          <button className=" bg-[#89c74a] text-white px-3 py-1 rounded focus:ring-2 ring-offset-1 ring-[#8ecf4d]">
+          <button
+            className=" bg-[#89c74a] text-white px-3 py-1 rounded focus:ring-2 ring-offset-1 ring-[#8ecf4d]"
+            onClick={() => handleDeliveredBtn(quantity)}
+          >
             Delivered
           </button>
           <div>

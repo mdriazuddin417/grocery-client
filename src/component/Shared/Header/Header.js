@@ -60,10 +60,10 @@ const Header = () => {
           </li>
 
           <li className="border-b-2 border-white lg:px-5 lg:hover:text-white rounded-lg hover:bg-orange-400 duration-500">
-            <Link to={"/home"}>Home</Link>
+            <Link to={"/manageproducts"}>Manage Products</Link>
           </li>
           <li className="border-b-2 border-white lg:px-5 lg:hover:text-white rounded-lg hover:bg-orange-400 duration-500">
-            <Link to={"/home"}>Home</Link>
+            <Link to={"/login"}>Login</Link>
           </li>
         </ul>
       </nav>

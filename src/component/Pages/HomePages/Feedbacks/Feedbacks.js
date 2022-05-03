@@ -43,7 +43,7 @@ const Feedbacks = () => {
           className="mySwiper swiper"
         >
           {feedbacks.map((feedback) => (
-            <SwiperSlide>
+            <SwiperSlide key={feedback._id}>
               <Feedback feedback={feedback}></Feedback>
             </SwiperSlide>
           ))}

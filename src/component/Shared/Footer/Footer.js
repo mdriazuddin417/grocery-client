@@ -74,8 +74,11 @@ const Footer = () => {
         <div>
           <p className="header-font text-2xl font-bold mb-5">Help</p>
           <ul>
-            {helps.map((help) => (
-              <li className="flex items-center  hover:text-[#89c74a] duration-300 text-lg">
+            {helps.map((help, index) => (
+              <li
+                key={index}
+                className="flex items-center  hover:text-[#89c74a] duration-300 text-lg"
+              >
                 <IoIosArrowForward className="mr-2" /> {help}
               </li>
             ))}
@@ -84,8 +87,11 @@ const Footer = () => {
         <div>
           <p className="header-font text-2xl font-bold mb-5">Support</p>
           <ul>
-            {supports.map((support) => (
-              <li className="flex items-center  hover:text-[#89c74a] duration-300 text-lg">
+            {supports.map((support, index) => (
+              <li
+                key={index}
+                className="flex items-center  hover:text-[#89c74a] duration-300 text-lg"
+              >
                 <IoIosArrowForward className="mr-2" /> {support}
               </li>
             ))}
@@ -94,8 +100,11 @@ const Footer = () => {
         <div>
           <p className="header-font text-2xl font-bold mb-5">Information</p>
           <ul>
-            {Informations.map((Information) => (
-              <li className="flex items-center hover:text-[#89c74a] duration-300 text-lg ">
+            {Informations.map((Information, index) => (
+              <li
+                key={index}
+                className="flex items-center hover:text-[#89c74a] duration-300 text-lg "
+              >
                 <IoIosArrowForward className="mr-2" /> {Information}
               </li>
             ))}
