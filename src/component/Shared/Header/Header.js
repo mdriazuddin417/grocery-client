@@ -70,6 +70,9 @@ const Header = () => {
           <li className="border-b-2 border-white lg:px-5 lg:hover:text-white  hover:bg-orange-400 duration-500">
             <Link to={"/manageitem"}>Manage Item</Link>
           </li>
+          <li className="border-b-2 border-white lg:px-5 lg:hover:text-white  hover:bg-orange-400 duration-500">
+            <Link to={"/myitem"}>My Items</Link>
+          </li>
           {user ? (
             <button
               className="bg-[#89c74a] px-5 text-white rounded-full"

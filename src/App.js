@@ -6,13 +6,12 @@ import Home from "./component/Pages/HomePages/Home/Home";
 import Login from "./component/Pages/LoginPage/Login/Login";
 import SignUp from "./component/Pages/LoginPage/Signup/SignUp";
 import ManageProducts from "./component/Pages/ManageProducts/ManageProducts";
-
 import Footer from "./component/Shared/Footer/Footer";
 import Header from "./component/Shared/Header/Header";
 import { ToastContainer } from "react-toastify";
-
 import "react-toastify/dist/ReactToastify.css";
 import ManageItem from "./component/Pages/ManageItem/ManageItem";
+import MyItem from "./component/Pages/MyItem/MyItem";
 function App() {
   return (
     <div>
@@ -24,6 +23,7 @@ function App() {
         <Route path="/manageinventory" element={<ManageProducts />} />
         <Route path="/manageitem" element={<ManageItem />} />
         <Route path="/addproduct" element={<AddProduct />} />
+        <Route path="/myitem" element={<MyItem />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>

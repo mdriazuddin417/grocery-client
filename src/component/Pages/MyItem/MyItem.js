@@ -1,17 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import useProducts from "../../hooks/useProducts";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import auth from "../../../firebase.init";
 import ManageSingleProduct from "../ManageSingeProduct/ManageSingleProduct";
 
-const Manageinventory = () => {
-  const [products, setProducts] = useProducts();
+const MyItem = () => {
+  const [user] = useAuthState(auth);
+  const [myitem, setMyitem] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const email = user?.email;
+
+    const getItem = async () => {
+      const url = `http://localhost:5000/products?email=${email}`;
+
+      const { data } = await axios.get(url);
+      setMyitem(data);
+    };
+    getItem();
+  }, [user]);
   return (
-    <div className="max-w-7xl mx-auto lg:px-12 lg:py-15 p-5 ">
-      <div className="text-right mb-4 ">
-        <Link to="/addproduct">
-          <button className="btn">Add Product++</button>
-        </Link>
-      </div>
+    <div className="max-w-7xl mx-auto lg:px-12 lg:py-15 p-5">
       <table className="table-fixed border border-[#e9e9e9] w-full">
         <thead>
           <tr className="bg-[#e9e9e9] py-2">
@@ -24,7 +35,7 @@ const Manageinventory = () => {
           </tr>
         </thead>
         <tbody className="text-center">
-          {products.map((product) => (
+          {myitem.map((product) => (
             <ManageSingleProduct
               key={product._id}
               product={product}
@@ -36,4 +47,4 @@ const Manageinventory = () => {
   );
 };
 
-export default Manageinventory;
+export default MyItem;

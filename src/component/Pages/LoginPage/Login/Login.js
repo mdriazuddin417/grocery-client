@@ -6,6 +6,7 @@ import auth from "../../../../firebase.init";
 import { toast } from "react-toastify";
 import Loading from "../../../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import axios from "axios";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -14,17 +15,25 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
     const email = data.email;
     const password = data.password;
 
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+
+    await axios
+      .post("http://localhost:5000/login", {
+        email,
+      })
+      .then((res) => {
+        localStorage.setItem("accessToken", res.data.accessToken);
+        navigate("/");
+      });
   };
 
   if (user) {
     toast.success("Successfully");
-    navigate("/");
   }
   if (error) {
     toast.error(error?.message);
