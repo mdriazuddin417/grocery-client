@@ -2,11 +2,36 @@ import React, { useEffect } from "react";
 import "./AddProduct.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import auth from "../../../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 const AddProduct = () => {
+  const [user] = useAuthState(auth);
+
   const { register, handleSubmit } = useForm();
+
   const onSubmit = (data) => {
     const url = `http://localhost:5000/products`;
-    axios.post(url, { data }).then((res) => {
+    const email = user?.email;
+    const name = data.name;
+    const price = data.price;
+    const selerName = data.selerName;
+    const text = data.text;
+    const image = data.image;
+    const quantity = data.quantity;
+
+    const product = {
+      email,
+      name,
+      price,
+      selerName,
+      text,
+      image,
+      quantity,
+    };
+
+    axios.post(url, { product }).then((res) => {
+      toast.success("New product added");
       console.log(res);
     });
   };
