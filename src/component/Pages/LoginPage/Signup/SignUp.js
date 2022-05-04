@@ -8,6 +8,7 @@ import {
 import auth from "../../../../firebase.init";
 import { toast } from "react-toastify";
 import Loading from "../../../Loading/Loading";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const { register, handleSubmit } = useForm();
@@ -83,6 +84,7 @@ const SignUp = () => {
             <p className="link">Return to Home</p>
           </Link>
         </div>
+        <SocialLogin />
       </div>
     </div>
   );

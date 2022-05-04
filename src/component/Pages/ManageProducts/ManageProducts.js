@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import ManageSingleProduct from "../ManageSingeProduct/ManageSingleProduct";
 
-const ManageProducts = () => {
+const manageinventory = () => {
   const [products, setProducts] = useProducts();
   return (
     <div className="max-w-7xl mx-auto lg:px-12 lg:py-15 p-5 ">
@@ -36,4 +36,4 @@ const ManageProducts = () => {
   );
 };
 
-export default ManageProducts;
+export default manageinventory;

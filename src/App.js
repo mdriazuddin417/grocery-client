@@ -12,6 +12,7 @@ import Header from "./component/Shared/Header/Header";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import ManageItem from "./component/Pages/ManageItem/ManageItem";
 function App() {
   return (
     <div>
@@ -20,7 +21,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/checkout/:id" element={<CheckOut />} />
-        <Route path="/manageproducts" element={<ManageProducts />} />
+        <Route path="/manageinventory" element={<ManageProducts />} />
+        <Route path="/manageitem" element={<ManageItem />} />
         <Route path="/addproduct" element={<AddProduct />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />

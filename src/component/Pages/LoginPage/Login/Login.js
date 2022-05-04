@@ -1,15 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../../../firebase.init";
 import { toast } from "react-toastify";
 import Loading from "../../../Loading/Loading";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -21,6 +24,7 @@ const Login = () => {
 
   if (user) {
     toast.success("Successfully");
+    navigate("/");
   }
   if (error) {
     toast.error(error?.message);
@@ -58,6 +62,7 @@ const Login = () => {
             <p className="link">Return to Home</p>
           </Link>
         </div>
+        <SocialLogin />
       </div>
     </div>
   );
