@@ -5,6 +5,7 @@ import ManageSingleProduct from "../ManageSingeProduct/ManageSingleProduct";
 
 const Manageinventory = () => {
   const [products, setProducts] = useProducts();
+
   return (
     <div className="max-w-7xl mx-auto lg:px-12 lg:py-15 p-5 ">
       <div className="text-right mb-4 ">
