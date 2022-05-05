@@ -39,8 +39,8 @@ const AddProduct = () => {
 
   return (
     <div className="max-w-7xl mx-auto lg:px-12 lg:py-20 p-5">
-      <div className="mx-auto add-product">
-        <p className="header-font font-bold text-[#89c74a] text-5xl text-center mb-5">
+      <div className="mx-auto add-product lg:w-1/2 md:w-1/3 w-full">
+        <p className="header-font font-bold text-[#89c74a] lg:text-5xl text-2xl text-center mb-5">
           Product Add{" "}
         </p>
         <form onSubmit={handleSubmit(onSubmit)} className=" space-y-4">

@@ -32,14 +32,16 @@ const ManageSingleProduct = ({ product }) => {
       <td className="lg:text-2xl font-semibold">{quantity}</td>
       <td>
         <Link to={`/checkout/${_id}`}>
-          <button className="btn  ">Update Stock</button>
+          <button className="btn3">Stock</button>
         </Link>
       </td>
-      <td className="text-center">
-        <MdDelete
-          className="text-3xl text-[red] cursor-pointer"
-          onClick={() => handleDelete(_id)}
-        />
+      <td>
+        <div className="flex justify-center items-center">
+          <MdDelete
+            className=" lg:text-3xl text-xl text-[red] cursor-pointer"
+            onClick={() => handleDelete(_id)}
+          />
+        </div>
       </td>
     </tr>
   );

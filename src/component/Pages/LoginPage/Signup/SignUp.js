@@ -48,8 +48,8 @@ const SignUp = () => {
 
   return (
     <div className="max-w-7xl mx-auto lg:px-12 lg:py-20 p-5">
-      <div className="bg-[#f7f7f7] w-1/2 mx-auto p-10 rounded-md">
-        <h3 className="header-font text-[#89c74a] font-bold text-5xl text-center mb-10">
+      <div className="bg-[#f7f7f7] lg:w-1/2 md:w-1/2 w-full mx-auto p-10 rounded-md">
+        <h3 className="header-font text-[#89c74a] font-bold lg:text-5xl text-2xl  text-center mb-10">
           Create Account
         </h3>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -75,12 +75,12 @@ const SignUp = () => {
           />
 
           <div className="flex justify-between items-center">
-            <input type="submit" className="btn2 mt-20 " value={"Sign Up"} />
+            <input type="submit" className="btn2 btn" value={"Sign Up"} />
             {(loading || updating) && <Loading />}
             <p className="text-red-600 ">{errors}</p>
           </div>
         </form>
-        <div className="flex justify-around items-center border-t mt-5 py-5">
+        <div className="flex flex-wrap justify-around border-t mt-5 py-5">
           <Link to={"/login"}>
             <p className="link">I have account</p>
           </Link>

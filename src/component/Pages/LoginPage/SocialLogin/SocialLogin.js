@@ -32,24 +32,24 @@ const SocialLogin = () => {
   return (
     <div className=" ">
       <p className="text-xl text-center mb-4 font-semibold">Sign in With</p>
-      <div className="flex justify-around">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 lg:w-full w-1/2 mx-auto text-sm">
         <button
-          className="border-[#89c74a] border py-2 px-8 rounded-full  hover:bg-[#89c74a] duration-300  focus:ring-2 ring-offset-1  ring-[#89c74a] font-semibold flex items-center "
+          className="border-[#89c74a] border py-2 px-8 rounded-full  hover:bg-[#89c74a] duration-300  focus:ring-2 ring-offset-1  ring-[#89c74a] font-semibold grid grid-cols-2 "
           onClick={() => signInWithGoogle()}
         >
-          <BsGoogle className="text-xl mr-3 text-[#e34133]" /> Google
+          <BsGoogle className="text-xl  text-[#e34133]" /> Google
         </button>
         <button
-          className="border-[#89c74a] border py-2 px-8 rounded-full  hover:bg-[#89c74a] duration-500 focus:ring-2 ring-offset-1  ring-[#89c74a] font-semibold flex items-center"
+          className="border-[#89c74a] border py-2 px-8 rounded-full  hover:bg-[#89c74a] duration-500 focus:ring-2 ring-offset-1  ring-[#89c74a] font-semibold grid grid-cols-2 "
           onClick={() => signInWithFacebook()}
         >
-          <BsFacebook className="text-xl mr-3 text-[#0d87ea]" /> facebook
+          <BsFacebook className="text-xl  text-[#0d87ea] " /> facebook
         </button>
         <button
-          className="border-[#89c74a] border py-2 px-8 rounded-full  hover:bg-[#89c74a] duration-500 focus:ring-2 ring-offset-1  ring-[#89c74a] font-semibold flex items-center"
+          className="border-[#89c74a] border py-2 px-8 rounded-full  hover:bg-[#89c74a] duration-500 focus:ring-2 ring-offset-1  ring-[#89c74a] font-semibold grid grid-cols-2 "
           onClick={() => signInWithGithub()}
         >
-          <BsGithub className="text-xl mr-3 text-[]" /> GitHub
+          <BsGithub className="text-xl mr-3" /> GitHub
         </button>
       </div>
     </div>

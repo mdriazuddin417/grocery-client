@@ -32,7 +32,7 @@ const LatestNews = () => {
               asperiores accusamus deserunt quos provident laudantium culpa
               maxime a reprehenderit{" "}
             </p>
-            <button className="btn ">Read more</button>
+            <button className="btn btn2">Read more</button>
           </div>
         </div>
         <div className="space-y-5 overflow-hidden">
@@ -60,7 +60,7 @@ const LatestNews = () => {
               asperiores accusamus deserunt quos provident laudantium culpa
               maxime a reprehenderit
             </p>
-            <button className="btn">Read more</button>
+            <button className="btn btn2">Read more</button>
           </div>
         </div>
         <div className="space-y-5 overflow-hidden">
@@ -88,7 +88,7 @@ const LatestNews = () => {
               asperiores accusamus deserunt quos provident laudantium culpa
               maxime a reprehenderit{" "}
             </p>
-            <button className="btn">Read more</button>
+            <button className="btn btn2">Read more</button>
           </div>
         </div>
       </div>
