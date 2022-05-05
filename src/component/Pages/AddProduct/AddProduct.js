@@ -12,6 +12,7 @@ const AddProduct = () => {
 
   const onSubmit = (data) => {
     const url = `http://localhost:5000/products`;
+
     const email = user?.email;
     const name = data.name;
     const price = data.price;

@@ -1,7 +1,8 @@
-import axios from "axios";
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import privateAxios from "../../../Api/privateAxios";
 import auth from "../../../firebase.init";
 import ManageSingleProduct from "../ManageSingeProduct/ManageSingleProduct";
 
@@ -14,10 +15,18 @@ const MyItem = () => {
     const email = user?.email;
 
     const getItem = async () => {
-      const url = `http://localhost:5000/products?email=${email}`;
+      const url = `http://localhost:5000/items?email=${email}`;
 
-      const { data } = await axios.get(url);
-      setMyitem(data);
+      try {
+        const { data } = await privateAxios.get(url);
+        setMyitem(data);
+      } catch (error) {
+        console.log(error.message);
+        if (error.response.status === 403 || error.response.status === 401) {
+          signOut(auth);
+          navigate("/login");
+        }
+      }
     };
     getItem();
   }, [user]);

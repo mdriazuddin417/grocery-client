@@ -1,11 +1,16 @@
 import axios from "axios";
 
-const privateAxios = axios.create();
+const privateAxios = axios.create({});
 
 // Add a request interceptor
 privateAxios.interceptors.request.use(
   function (config) {
     // Do something before request is sent
+    if (!config.headers.authorization) {
+      config.headers.authorization = `Bearer ${localStorage.getItem(
+        "accessToken"
+      )}`;
+    }
     return config;
   },
   function (error) {
@@ -23,7 +28,11 @@ privateAxios.interceptors.response.use(
   },
   function (error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
+    if (error.response.status === 403) {
+    }
 
     return Promise.reject(error);
   }
 );
+
+export default privateAxios;
