@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 const NotFound = () => {
   return (
     <div className="">
-      <div class="bg-[#045ed4] py-[240px] relative z-10 ">
-        <div class="container">
-          <div class="flex -mx-4">
-            <div class="w-full px-4">
-              <div class="mx-auto max-w-[400px] text-center">
+      <div className="bg-[#045ed4] py-[240px] relative z-10 ">
+        <div className="container">
+          <div className="flex -mx-4">
+            <div className="w-full px-4">
+              <div className="mx-auto max-w-[400px] text-center">
                 <h2
-                  class="
+                  className="
                   font-bold
                   text-white
                   mb-2
@@ -22,10 +22,10 @@ const NotFound = () => {
                 >
                   404
                 </h2>
-                <h4 class="text-white font-semibold text-[22px] leading-tight mb-3">
+                <h4 className="text-white font-semibold text-[22px] leading-tight mb-3">
                   Oops! That page can’t be found
                 </h4>
-                <p class="text-lg text-white mb-8">
+                <p className="text-lg text-white mb-8">
                   The page you are looking for it maybe deleted
                 </p>
                 <Link
@@ -51,7 +51,7 @@ const NotFound = () => {
           </div>
         </div>
         <div
-          class="
+          className="
       absolute
       -z-10
       w-full
@@ -66,10 +66,10 @@ const NotFound = () => {
       lg:space-x-14
       "
         >
-          <div class="w-1/3 h-full bg-gradient-to-t from-[#FFFFFF14] to-[#C4C4C400]"></div>
-          <div class="w-1/3 h-full flex">
+          <div className="w-1/3 h-full bg-gradient-to-t from-[#FFFFFF14] to-[#C4C4C400]"></div>
+          <div className="w-1/3 h-full flex">
             <div
-              class="
+              className="
             w-1/2
             h-full
             bg-gradient-to-b
@@ -78,7 +78,7 @@ const NotFound = () => {
             "
             ></div>
             <div
-              class="
+              className="
             w-1/2
             h-full
             bg-gradient-to-t
@@ -87,7 +87,7 @@ const NotFound = () => {
             "
             ></div>
           </div>
-          <div class="w-1/3 h-full bg-gradient-to-b from-[#FFFFFF14] to-[#C4C4C400]"></div>
+          <div className="w-1/3 h-full bg-gradient-to-b from-[#FFFFFF14] to-[#C4C4C400]"></div>
         </div>
       </div>
     </div>

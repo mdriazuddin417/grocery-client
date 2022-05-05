@@ -1,11 +1,33 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import ManageSingleProduct from "../ManageSingeProduct/ManageSingleProduct";
 
 const Manageinventory = () => {
-  const [products, setProducts] = useProducts();
+  const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(0);
+  const [size, setSize] = useState(10);
+  const [pageCount, setPageCount] = useState(0);
 
+  useEffect(() => {
+    const url = `http://localhost:5000/products?page=${page}&size=${size}`;
+
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, [page, size]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/count")
+      .then((res) => res.json())
+      .then((data) => {
+        const count = data.count;
+        const page = Math.ceil(count / 10);
+        setPageCount(page);
+      });
+  }, []);
+  console.log(pageCount);
   return (
     <div className="max-w-7xl mx-auto lg:px-12 lg:py-15 p-5 ">
       <div className="text-right mb-4 ">
@@ -33,6 +55,31 @@ const Manageinventory = () => {
           ))}
         </tbody>
       </table>
+      <div className="flex justify-center my-8">
+        {[...Array(pageCount).keys()].map((number) => (
+          <button
+            className={
+              page === number
+                ? "bg-[#183fee] p-2 border rounded-md shadow m-2 text-white focus:ring-3 ring-offset-1 ring-blue-400 "
+                : " p-2 border rounded-md shadow m-2"
+            }
+            onClick={() => setPage(number)}
+          >
+            {number + 1}
+          </button>
+        ))}
+        <select
+          className="border focus:outline-none border-blue-700 rounded-lg px-2 font-semibold"
+          onChange={(e) => setSize(e.target.value)}
+        >
+          <option value="5">5</option>
+          <option value="10" selected>
+            10
+          </option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
     </div>
   );
 };
