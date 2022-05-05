@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
@@ -9,15 +9,20 @@ import auth from "../../../../firebase.init";
 import { toast } from "react-toastify";
 import Loading from "../../../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import useToken from "../../../../Api/useToken";
 
 const SignUp = () => {
   const { register, handleSubmit } = useForm();
   const [errors, setErrors] = useState("");
+
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const [createUserWithEmailAndPassword, user, loading, error1] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, error2] = useUpdateProfile(auth);
-
+  const [token] = useToken(user);
   const onSubmit = async (data) => {
     const name = data.name;
     const email = data.email;
@@ -36,10 +41,9 @@ const SignUp = () => {
     }
   };
 
-  if (user) {
-    console.log(user);
+  if (token) {
     toast.success("Creat an account successfully!");
-    navigate("/home");
+    navigate(from, { replace: true });
   }
 
   return (

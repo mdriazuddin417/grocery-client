@@ -4,26 +4,31 @@ import {
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../../firebase.init";
 import { BsFacebook, BsGithub, BsGoogle } from "react-icons/bs";
+import useToken from "../../../../Api/useToken";
 
 const SocialLogin = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const [signInWithFacebook, facebookUser, loading1, facebookError] =
     useSignInWithFacebook(auth);
   const [signInWithGithub, githubUser, loading2, githubError] =
     useSignInWithGithub(auth);
   const [signInWithGoogle, googleUser, loading3, googleError] =
     useSignInWithGoogle(auth);
+  const [token] = useToken(facebookUser || googleUser || githubUser);
 
   useEffect(() => {
-    if (facebookUser || githubUser || googleUser) {
+    if (token) {
       toast.success("Successfully!!");
-      navigate("/home");
+      navigate(from, { replace: true });
     }
-  }, [facebookUser, googleUser, githubUser, navigate]);
+  }, [token]);
   return (
     <div className=" ">
       <p className="text-xl text-center mb-4 font-semibold">Sign in With</p>

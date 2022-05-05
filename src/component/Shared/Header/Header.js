@@ -8,6 +8,7 @@ import { MdClose } from "react-icons/md";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
+import CustomLink from "../../CustomLink/CustomLink";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [user] = useAuthState(auth);
@@ -43,7 +44,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <nav className="lg:flex justify-between items-center   max-w-7xl mx-auto lg:px-12 lg:py-3 py-3">
+      {/* <nav className="lg:flex justify-between items-center   max-w-7xl mx-auto lg:px-12 lg:py-3 py-3">
         <div className="flex justify-between items-center  px-3">
           <h3 className=" text-3xl header-font font-bold text-[#89c74a]">
             Grocery Shop
@@ -86,7 +87,55 @@ const Header = () => {
             </li>
           )}
         </ul>
-      </nav>
+      </nav> */}
+      <div className="text-gray-600 body-font">
+        <div className="max-w-7xl mx-auto lg:flex">
+          <div className="flex  justify-between px-12 py-5 items-center ">
+            <Link to={"/"}>
+              <span className="ml-3 lg:text-3xl text-xl header-font text-[#89c74a]">
+                Grocery Shop
+              </span>
+            </Link>
+            <span
+              className="lg:hidden text-3xl text-[#89c74a]"
+              onClick={() => setOpen(!open)}
+            >
+              {!open ? <RiMenu2Line /> : <MdClose />}
+            </span>
+          </div>
+
+          <nav
+            className={`md:ml-auto   lg:flex flex-wrap items-center text-base justify-center text-center space-y-3 lg:space-y-0 px-20 py-5 lg:px-0 lg:py-0 lg:bg-white bg-[#89c74a]  ${
+              !open ? "hidden" : " block"
+            }`}
+          >
+            <CustomLink to={"/home"} className="mr-5 ">
+              Home
+            </CustomLink>
+
+            {user ? (
+              <>
+                <CustomLink to={"/manageitem"} className="mr-5 ">
+                  Manage Item
+                </CustomLink>
+                <CustomLink to={"/additem"} className="mr-5 ">
+                  Add Item
+                </CustomLink>
+                <CustomLink to={"/myitem"} className="mr-5 ">
+                  My Item
+                </CustomLink>
+                <button className="mr-5 " onClick={() => signOut(auth)}>
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <Link to={"/login"} className="mr-5 ">
+                Login
+              </Link>
+            )}
+          </nav>
+        </div>
+      </div>
     </div>
   );
 };

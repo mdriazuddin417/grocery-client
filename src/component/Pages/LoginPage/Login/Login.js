@@ -1,20 +1,23 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../../../firebase.init";
 import { toast } from "react-toastify";
 import Loading from "../../../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import axios from "axios";
+import useToken from "../../../../Api/useToken";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [token] = useToken(user);
 
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const onSubmit = async (data) => {
     console.log(data);
     const email = data.email;
@@ -28,12 +31,12 @@ const Login = () => {
       })
       .then((res) => {
         localStorage.setItem("accessToken", res.data.accessToken);
-        navigate("/");
       });
   };
 
-  if (user) {
+  if (token) {
     toast.success("Successfully");
+    navigate(from, { replace: true });
   }
   if (error) {
     toast.error(error?.message);
