@@ -3,11 +3,15 @@ import img1 from "../../../../image/item1.webp";
 import img2 from "../../../../image/item2.webp";
 import img3 from "../../../../image/item3.webp";
 import { BiUserCircle } from "react-icons/bi";
+import { BsArrowRightShort } from "react-icons/bs";
 import { MdDateRange } from "react-icons/md";
 const LatestNews = () => {
   return (
     <div className="max-w-7xl mx-auto lg:px-12 p-4  lg:py-10 ">
       <h2 className="header">Latest News</h2>
+      <p className="text-center header-font text-gray-600">
+        LT Foods to step up investments on new product development
+      </p>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 pt-5">
         <div className="space-y-5 overflow-hidden ">
           <img
@@ -34,7 +38,10 @@ const LatestNews = () => {
               a Bengaluru-based agritech firm is providing greenhouse produce
               through managed farms in partnership with small farm holders.
             </p>
-            <button className="btn btn2">Read more</button>
+            <button className="btn btn2 flex justify-around items-center">
+              Read more{" "}
+              <BsArrowRightShort className="text-3xl arrow duration-300 " />
+            </button>
           </div>
         </div>
         <div className="space-y-5 overflow-hidden">
@@ -63,7 +70,10 @@ const LatestNews = () => {
               ready-to-cook market in India to grow 18% to reach Rs 4800 crore
               by 2024.
             </p>
-            <button className="btn btn2">Read more</button>
+            <button className="btn btn2 flex justify-around items-center">
+              Read more{" "}
+              <BsArrowRightShort className="text-3xl arrow duration-300 " />
+            </button>
           </div>
         </div>
         <div className="space-y-5 overflow-hidden">
@@ -92,7 +102,10 @@ const LatestNews = () => {
               millets, spices and condiments, tea, dry fruits, sugar, pulses,
               coffee, and essential oil.
             </p>
-            <button className="btn btn2">Read more</button>
+            <button className="btn btn2 flex justify-around items-center">
+              Read more{" "}
+              <BsArrowRightShort className="text-3xl arrow duration-300 " />
+            </button>
           </div>
         </div>
       </div>

@@ -23,8 +23,8 @@ const Feedbacks = () => {
       <h3 className="header-font text-black font-bold text-4xl text-center pt-10">
         Our Client Say
       </h3>
-      <p className="header-font text-gray-700 text-center pb-5">
-        This is my favorite project
+      <p className="header-font text-gray-600 text-center pb-5">
+        One of the most important aspects of running a successful business.
       </p>
 
       <div className="max-w-7xl mx-auto lg:px-12 p-4 ">

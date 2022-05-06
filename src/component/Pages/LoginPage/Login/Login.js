@@ -12,6 +12,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 import axios from "axios";
 import useToken from "../../../../Api/useToken";
 import { async } from "@firebase/util";
+import PageTitle from "../../../Shared/PageTitle/PageTitle";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -70,6 +71,7 @@ const Login = () => {
 
   return (
     <div className="max-w-7xl mx-auto lg:px-12 lg:py-20 p-5">
+      <PageTitle title="Login"></PageTitle>
       <div className="bg-[#f7f7f7] lg:w-1/2 md:w-1/2 w-full mx-auto p-10 rounded-md">
         <h3 className="header-font text-[#89c74a] font-bold lg:text-5xl text-2xl text-center lg:mb-10 mb-5">
           Please Login

@@ -1,5 +1,6 @@
 import React from "react";
 import Loading from "../../../Loading/Loading";
+import PageTitle from "../../../Shared/PageTitle/PageTitle";
 import Banner from "../Banner/Banner";
 import Feedbacks from "../Feedbacks/Feedbacks";
 import Helpline from "../HelpLine/Helpline";
@@ -13,6 +14,7 @@ import SubBanner from "../SubBanner/SubBanner";
 const Home = () => {
   return (
     <div>
+      <PageTitle title="Home"></PageTitle>
       <Banner />
       <SubBanner />
       <Products />

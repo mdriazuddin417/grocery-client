@@ -1,8 +1,10 @@
 import React from "react";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 
 const Blog = () => {
   return (
     <div className="max-w-7xl mx-auto lg:px-12 lg:py-20 p-54">
+      <PageTitle title="Blog"></PageTitle>
       <h2 className="header mb-10">Blog</h2>
       <div className="flex justify-center">
         <div className="grid lg:grid-cols-2 md:grid-cols-3 grid-cols-2 gap-x-32 gap-y-10">

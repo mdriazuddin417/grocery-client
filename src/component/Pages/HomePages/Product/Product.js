@@ -31,7 +31,7 @@ const Product = ({ product }) => {
       </p>
 
       <button
-        className="btn"
+        className="btn btn2"
         onClick={() => {
           handleProduct(_id);
         }}

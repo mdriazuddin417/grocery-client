@@ -9,7 +9,8 @@ const Products = () => {
     <div className="max-w-7xl mx-auto py-10 lg:px-12 px-4">
       <h2 className="header">Our Products</h2>
       <p className="header-font text-center text-gray-600 pb-5">
-        Your favorite choice and healthy food
+        Fresh, healthy and full of Goodness. View our wide range of fresh
+        fruits.
       </p>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 ">
         {products.slice(0, 6).map((product) => (

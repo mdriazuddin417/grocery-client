@@ -38,3 +38,8 @@ body {
 .link {
   @apply hover:text-[#89c74a]  font-semibold duration-300 cursor-pointer;
 }
+
+button:hover .arrow {
+  transform: translateX(20px);
+  opacity: 0;
+}

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 import ManageSingleProduct from "../ManageSingeProduct/ManageSingleProduct";
 
 const Manageinventory = () => {
@@ -30,6 +31,7 @@ const Manageinventory = () => {
   console.log(pageCount);
   return (
     <div className="max-w-7xl mx-auto lg:px-12 lg:py-15 p-5 ">
+      <PageTitle title="Manage Product"></PageTitle>
       <div className="text-right mb-4 ">
         <Link to="/addproduct">
           <button className="btn btn3">Add Product++</button>

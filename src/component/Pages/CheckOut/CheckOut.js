@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useProductDetails from "../../hooks/useProductDetail";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 
 const CheckOut = () => {
   const { id } = useParams();
@@ -13,6 +14,7 @@ const CheckOut = () => {
 
   return (
     <div className="max-w-7xl mx-auto lg:pt-20 lg:px-12 lg:pb-12">
+      <PageTitle title="CheckOut"></PageTitle>
       <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-10">
         <div>
           <img src={image} alt="" />

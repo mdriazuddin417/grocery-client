@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import privateAxios from "../../../Api/privateAxios";
 import auth from "../../../firebase.init";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 import ManageSingleProduct from "../ManageSingeProduct/ManageSingleProduct";
 
 const MyItem = () => {
@@ -32,6 +33,7 @@ const MyItem = () => {
   }, [user]);
   return (
     <div className="max-w-7xl mx-auto lg:px-12 lg:py-15 p-5">
+      <PageTitle title="My Item"></PageTitle>
       <table className="table-fixed border border-[#e9e9e9] w-full">
         <thead>
           <tr className="bg-[#e9e9e9] py-2 lg:text-lg text-[10px] sm:text-base md:text-md ">

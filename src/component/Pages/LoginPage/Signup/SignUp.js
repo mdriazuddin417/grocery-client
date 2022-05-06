@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import Loading from "../../../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import useToken from "../../../../Api/useToken";
+import PageTitle from "../../../Shared/PageTitle/PageTitle";
 
 const SignUp = () => {
   const { register, handleSubmit } = useForm();
@@ -48,6 +49,7 @@ const SignUp = () => {
 
   return (
     <div className="max-w-7xl mx-auto lg:px-12 lg:py-20 p-5">
+      <PageTitle title="SignUp"></PageTitle>
       <div className="bg-[#f7f7f7] lg:w-1/2 md:w-1/2 w-full mx-auto p-10 rounded-md">
         <h3 className="header-font text-[#89c74a] font-bold lg:text-5xl text-2xl  text-center mb-10">
           Create Account
