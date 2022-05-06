@@ -12,7 +12,7 @@ const ManageSingleProduct = ({ product }) => {
     const proceed = window.confirm("Are You sure?");
     console.log(proceed);
     if (proceed) {
-      const url = `http://localhost:5000/products/${id}`;
+      const url = `https://grocery-shop2.herokuapp.com/products/${id}`;
 
       axios.delete(url).then((res) => {
         const newProducts = products.filter((product) => product._id !== id);

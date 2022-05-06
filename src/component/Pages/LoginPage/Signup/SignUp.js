@@ -23,6 +23,7 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, error2] = useUpdateProfile(auth);
   const [token] = useToken(user);
+
   const onSubmit = async (data) => {
     const name = data.name;
     const email = data.email;
@@ -30,7 +31,6 @@ const SignUp = () => {
     const confirmPass = data.confirmPass;
 
     if (password === confirmPass) {
-      console.log(name, email, password, confirmPass);
       createUserWithEmailAndPassword(email, password);
       toast("Send email verification");
       await updateProfile({ displayName: name });

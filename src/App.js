@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import MyItem from "./component/Pages/MyItem/MyItem";
 import RequireAuth from "./component/RequireAuth/RequireAuth";
 import NotFound from "./component/Pages/NotFound/NotFound";
+import Blog from "./component/Pages/Blog/Blog";
 function App() {
   return (
     <div>
@@ -37,6 +38,7 @@ function App() {
         <Route path="/additem" element={<AddProduct />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

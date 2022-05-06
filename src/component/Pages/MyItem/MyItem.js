@@ -15,7 +15,7 @@ const MyItem = () => {
     const email = user?.email;
 
     const getItem = async () => {
-      const url = `http://localhost:5000/items?email=${email}`;
+      const url = `https://grocery-shop2.herokuapp.com/items?email=${email}`;
 
       try {
         const { data } = await privateAxios.get(url);
