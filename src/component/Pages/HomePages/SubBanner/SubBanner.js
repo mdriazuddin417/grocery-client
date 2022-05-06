@@ -7,11 +7,11 @@ const SubBanner = () => {
   return (
     <div className="max-w-7px px-12 py-10 ">
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 ">
-        <div className=" bg-[#ffdfdf]   overflow-hidden  hover:shadow-lg grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5 text-center align-middle p-4">
+        <div className=" bg-[#ffdfdf]    duration-300  hover:shadow-lg grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5 text-center align-middle p-4">
           <div className="flex justify-center items-center">
             <img src={img2} alt="" className="w-80 " />
           </div>
-          <div className=" flex justify-center items-center flex-col">
+          <div className=" flex justify-center items-center flex-col space-y-2">
             <p className="header-font text-2xl">Fruits</p>
             <p className="text-xl">
               <span className="font-semibold">100%</span> Fresh products
@@ -21,11 +21,11 @@ const SubBanner = () => {
             </button>
           </div>
         </div>
-        <div className=" bg-[#fff08a]   overflow-hidden  hover:shadow-lg grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5 text-center align-middle p-4">
+        <div className=" bg-[#fff08a]     hover:shadow-lg duration-300 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5 text-center align-middle p-4">
           <div className="flex justify-center items-center">
             <img src={img1} alt="" className="w-80 " />
           </div>
-          <div className=" flex justify-center items-center flex-col">
+          <div className=" flex justify-center items-center flex-col space-y-2">
             <p className="header-font text-2xl">Fruits</p>
             <p className="text-xl">
               <span className="font-semibold">100%</span> Fresh products
