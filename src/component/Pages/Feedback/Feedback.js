@@ -6,7 +6,7 @@ const Feedback = ({ feedback }) => {
   return (
     <div className="space-y-5 py-16 rounded cursor-pointer ">
       <div className="feedback flex text-left justify-center items-center ">
-        <img src={picture} alt="" />
+        <img src={picture} alt="" className="rounded-full" />
         <div className="ml-3">
           <p className="text-[#89c74a] font-bold text-xl">{name}</p>
           <p>{cetagory}</p>

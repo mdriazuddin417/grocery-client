@@ -24,8 +24,8 @@ const Product = ({ product }) => {
         STOCK
       </p>
       <p>
-        The available products:
-        <span className=" text-3xl text-[#233a95] font-semibold">
+        The available products:{" "}
+        <span className=" text-2xl text-[#233a95] font-semibold">
           {quantity}
         </span>
       </p>

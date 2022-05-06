@@ -39,7 +39,7 @@ const Question = () => {
                   aria-expanded="true"
                   aria-controls="collapseOne5"
                 >
-                  Accordion Item #1
+                  Should I buy organic vegetables?
                 </button>
               </h2>
               <div
@@ -48,15 +48,11 @@ const Question = () => {
                 aria-labelledby="headingOne5"
               >
                 <div className="accordion-body py-4 px-5">
-                  <strong>This is the first item's accordion body.</strong> It
-                  is shown by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the{" "}
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  Organic foods are generally good for you and for the
+                  environment. Even though organic fruits and vegetables are
+                  more expensive than conventional produce, the true long term
+                  benefits to health and environment are suggested to be
+                  sizeable.
                 </div>
               </div>
             </div>
@@ -85,7 +81,7 @@ const Question = () => {
                   aria-expanded="false"
                   aria-controls="collapseTwo5"
                 >
-                  Accordion Item #2
+                  How do you identify organic vegetables?
                 </button>
               </h2>
               <div
@@ -94,15 +90,11 @@ const Question = () => {
                 aria-labelledby="headingTwo5"
               >
                 <div className="accordion-body py-4 px-5">
-                  <strong>This is the second item's accordion body.</strong> It
-                  is hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the{" "}
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  Organic vegetables look similar to conventional vegetables.
+                  Since there is no use of chemical fertilizers and pesticides,
+                  they may often look natural, smaller, irregular and less
+                  attractive. A dot, scar or hole is not uncommon. Identify by
+                  trusted source and not the product.
                 </div>
               </div>
             </div>
@@ -131,7 +123,7 @@ const Question = () => {
                   aria-expanded="false"
                   aria-controls="collapseThree5"
                 >
-                  Accordion Item #3
+                  Is organic food safer?
                 </button>
               </h2>
               <div
@@ -140,15 +132,12 @@ const Question = () => {
                 aria-labelledby="headingThree5"
               >
                 <div className="accordion-body py-4 px-5">
-                  <strong>This is the third item's accordion body.</strong> It
-                  is hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the{" "}
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  Organic farming does not employ chemical fertilizers &
+                  pesticides, does not utilize sewage water and hence has lower
+                  pesticide residues and contamination in food. This translates
+                  to safer food. Natural and biological control agents are
+                  considered to be less toxic and to leave less or no residues,
+                  though this is to be proven conclusively.
                 </div>
               </div>
             </div>

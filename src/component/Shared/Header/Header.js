@@ -44,55 +44,12 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {/* <nav className="lg:flex justify-between items-center   max-w-7xl mx-auto lg:px-12 lg:py-3 py-3">
-        <div className="flex justify-between items-center  px-3">
-          <h3 className=" text-3xl header-font font-bold text-[#89c74a]">
-            Grocery Shop
-          </h3>
-          <span
-            className="lg:hidden text-3xl text-[#89c74a]"
-            onClick={() => setOpen(!open)}
-          >
-            {!open ? <RiMenu2Line /> : <MdClose />}
-          </span>
-        </div>
-        <ul
-          className={`lg:flex lg:space-x-5  lg:bg-white lg:text-black block text-center text-white leading-[3rem] bg-[#89c74a]  ${
-            !open ? "hidden" : " block"
-          }`}
-        >
-          <li className="border-b-2 border-white lg:px-5 lg:hover:text-white  hover:bg-orange-400 duration-500">
-            <Link to={"/home"}>Home</Link>
-          </li>
 
-          <li className="border-b-2 border-white lg:px-5 lg:hover:text-white  hover:bg-orange-400 duration-500">
-            <Link to={"/manageinventory"}>Manage Inventory</Link>
-          </li>
-          <li className="border-b-2 border-white lg:px-5 lg:hover:text-white  hover:bg-orange-400 duration-500">
-            <Link to={"/manageitem"}>Manage Item</Link>
-          </li>
-          <li className="border-b-2 border-white lg:px-5 lg:hover:text-white  hover:bg-orange-400 duration-500">
-            <Link to={"/myitem"}>My Items</Link>
-          </li>
-          {user ? (
-            <button
-              className="bg-[#89c74a] px-5 text-white rounded-full"
-              onClick={() => signOut(auth)}
-            >
-              SignOut
-            </button>
-          ) : (
-            <li className="border-b-2 border-white lg:px-5 lg:hover:text-white hover:bg-orange-400 duration-500">
-              <Link to={"/login"}>Login</Link>
-            </li>
-          )}
-        </ul>
-      </nav> */}
-      <div className="text-gray-600 body-font">
-        <div className="max-w-7xl mx-auto lg:flex">
+      <div className="text-gray-600 body-font nav ">
+        <div className="max-w-7xl mx-auto lg:flex lg:py-2">
           <div className="flex  justify-between px-12 py-5 items-center ">
             <Link to={"/"}>
-              <span className="ml-3 lg:text-3xl text-xl header-font text-[#89c74a]">
+              <span className="ml-3 lg:text-3xl text-xl header-font font-bold text-[#89c74a]">
                 Grocery Shop
               </span>
             </Link>

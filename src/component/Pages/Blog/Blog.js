@@ -11,10 +11,15 @@ const Blog = () => {
               Difference between javascript and nodejs?
             </h4>
             <p className="text-gray-500">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto ut
-              ratione modi aspernatur sint, quasi ea esse laudantium ipsa
-              doloribus alias nihil cum, dolorem cupiditate placeat blanditiis
-              repellat sed magni!
+              Javascript is a programing Language that is used for writing
+              script on the website.Javascript can only be run in the
+              browsers.It is basically used on the client-side . It is capable
+              enough to add HTML and play with the DOM. Javascript is used
+              frontend development. Node JS is a javascript runtime environment.
+              We can run javascript outside the browser with help of Node Js. It
+              is mostly used on the server-side . Node Js does not have
+              capability to add HTML Tag.Node Js is used in server-side
+              Development.
             </p>
           </div>
           <div className="h-full shadow-lg rounded-lg p-10">

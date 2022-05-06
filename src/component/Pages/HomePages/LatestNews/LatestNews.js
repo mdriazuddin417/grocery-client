@@ -1,5 +1,7 @@
 import React from "react";
-import img1 from "../../../../image/items-5.jpg";
+import img1 from "../../../../image/item1.webp";
+import img2 from "../../../../image/item2.webp";
+import img3 from "../../../../image/item3.webp";
 import { BiUserCircle } from "react-icons/bi";
 import { MdDateRange } from "react-icons/md";
 const LatestNews = () => {
@@ -28,16 +30,16 @@ const LatestNews = () => {
               Best in Quality Fresh Meat & Seafood
             </h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque,
-              asperiores accusamus deserunt quos provident laudantium culpa
-              maxime a reprehenderit{" "}
+              Tapping on the rising consumer consciousness towards food quality,
+              a Bengaluru-based agritech firm is providing greenhouse produce
+              through managed farms in partnership with small farm holders.
             </p>
             <button className="btn btn2">Read more</button>
           </div>
         </div>
         <div className="space-y-5 overflow-hidden">
           <img
-            src={img1}
+            src={img2}
             alt=""
             className="relative rounded transform duration-300 hover:scale-110"
           />
@@ -56,16 +58,17 @@ const LatestNews = () => {
               Best Way To Eat Dry Fruits And Nuts
             </h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque,
-              asperiores accusamus deserunt quos provident laudantium culpa
-              maxime a reprehenderit
+              LT Foods expects to spend 4% of branded sales on marketing which
+              is 75% of its total revenue. A report by RedSeer forecasted the
+              ready-to-cook market in India to grow 18% to reach Rs 4800 crore
+              by 2024.
             </p>
             <button className="btn btn2">Read more</button>
           </div>
         </div>
         <div className="space-y-5 overflow-hidden">
           <img
-            src={img1}
+            src={img3}
             alt=""
             className="relative rounded transform duration-300 hover:scale-110"
           />
@@ -84,9 +87,10 @@ const LatestNews = () => {
               Fruits & Vegetable Nutrients For Your Health
             </h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque,
-              asperiores accusamus deserunt quos provident laudantium culpa
-              maxime a reprehenderit{" "}
+              The main goods which recorded healthy growth in exports include
+              oil cake meal, oilseeds, fruit pulps and purees, cereals and
+              millets, spices and condiments, tea, dry fruits, sugar, pulses,
+              coffee, and essential oil.
             </p>
             <button className="btn btn2">Read more</button>
           </div>
