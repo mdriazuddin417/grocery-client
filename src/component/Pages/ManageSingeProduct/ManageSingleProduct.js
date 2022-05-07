@@ -1,25 +1,47 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
-import axios from "axios";
+
 import useProducts from "../../hooks/useProducts";
+
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
+import axios from "axios";
 
 const ManageSingleProduct = ({ product }) => {
   const [products, setProducts] = useProducts();
+
   const { name, price, selerName, text, image, quantity, _id } = product;
 
-  const handleDelete = (id) => {
-    const proceed = window.confirm("Are You sure?");
-    console.log(proceed);
-    if (proceed) {
-      const url = `https://grocery-shop2.herokuapp.com/products/${id}`;
+  //================confirm modal=====================
 
-      axios.delete(url).then((res) => {
-        const newProducts = products.filter((product) => product._id !== id);
-        setProducts(newProducts);
-        console.log(res);
-      });
-    }
+  const handleDelete = (id) => {
+    confirmAlert({
+      message: "Are you sure ?",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => {
+            const url = `http://localhost:5000/products/${id}`;
+            axios.delete(url).then((res) => {
+              console.log(res);
+              const newProducts = products.filter(
+                (product) => product._id !== id
+              );
+              console.log(newProducts);
+              setProducts(newProducts);
+              window.location.reload();
+            });
+          },
+        },
+        {
+          label: "No",
+          onClick: () => {
+            return;
+          },
+        },
+      ],
+    });
   };
 
   return (
@@ -38,7 +60,7 @@ const ManageSingleProduct = ({ product }) => {
       <td>
         <div className="flex justify-center items-center">
           <MdDelete
-            className=" lg:text-3xl text-xl text-[red] cursor-pointer"
+            className=" lg:text-3xl text-xl text-[red] cursor-pointer "
             onClick={() => handleDelete(_id)}
           />
         </div>

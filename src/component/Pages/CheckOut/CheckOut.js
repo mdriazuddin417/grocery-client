@@ -3,14 +3,63 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useProductDetails from "../../hooks/useProductDetail";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
-
+import { useForm } from "react-hook-form";
+import { FaFacebookF, FaGithub } from "react-icons/fa";
+import { GrLinkedinOption } from "react-icons/gr";
 const CheckOut = () => {
   const { id } = useParams();
   const [product, setProduct] = useProductDetails(id);
-  const [input, setInput] = useState("");
+
   let { name, image, price, selerName, text, quantity } = product;
 
-  const handleDeliveredBtn = (quantity) => {};
+  const handleDeliveredBtn = async () => {
+    let deliver = 1;
+    let quantityParse = parseInt(quantity);
+    let newQuantity = quantityParse - deliver;
+    const productInfo = {
+      name: name,
+      image: image,
+      price: price,
+      selerName: selerName,
+      text: text,
+      quantity: newQuantity,
+    };
+    const url = `http://localhost:5000/products/${id}`;
+
+    await axios
+      .put(url, {
+        productInfo,
+      })
+      .then((data) => {
+        setProduct(productInfo);
+      });
+  };
+
+  //============================================
+  const { register, handleSubmit, reset } = useForm();
+
+  const onSubmit = async (data) => {
+    const increaseQuantity = parseInt(data.increase) + parseInt(quantity);
+    const productInfo = {
+      name: name,
+      image: image,
+      price: price,
+      selerName: selerName,
+      text: text,
+      quantity: increaseQuantity,
+    };
+
+    const url = `http://localhost:5000/products/${id}`;
+
+    await axios
+      .put(url, {
+        productInfo,
+      })
+      .then((data) => {
+        setProduct(productInfo);
+      });
+    reset();
+  };
 
   return (
     <div className="max-w-7xl mx-auto lg:pt-20 lg:px-12 lg:pb-12">
@@ -59,28 +108,48 @@ const CheckOut = () => {
               Quantity Update:{" "}
             </label>{" "}
             <br />
-            <input
-              type="text"
-              placeholder="increase quantity"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              className="bg-gray-200 py-2 px-1 rounded-lg focus:outline-offset-1 outline-lime-300"
-            />
-            <button
-              className=" bg-[#89c74a] text-white px-3 py-2 rounded focus:ring-2 ring-offset-1 ring-[#8ecf4d]"
-              // onClick={handleQuantity}
-            >
-              Add
-            </button>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <input
+                type="number"
+                {...register("increase", { min: 1 })}
+                className="focus:outline-1 outline-lime-400 border rounded-lg border-gray-300 py-1 pl-2"
+              />
+
+              <input
+                className="bg-lime-600 text-white px-3 py-1 border rounded-lg border-gray-300 ml-1 focus:ring-2 ring-offset-0 ring-lime-400"
+                type="submit"
+                value={"Submit"}
+              />
+            </form>
           </div>
           <button
             className=" bg-[#89c74a] text-white px-3 py-1 rounded focus:ring-2 ring-offset-1 ring-[#8ecf4d]"
-            onClick={() => handleDeliveredBtn(quantity)}
+            onClick={handleDeliveredBtn}
           >
             Delivered
           </button>
-          <div>
+          <div className="flex  justify-start items-center space-x-2">
             <p>Share with us:</p>
+            <div className="flex space-x-7 text-xl text-[#89c74a] ">
+              <a
+                href="www.facebook.com"
+                className="hover:text-black duration-300"
+              >
+                <FaFacebookF />
+              </a>
+              <a
+                href="www.github.com"
+                className="hover:text-black duration-300"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="www.linkedin.com"
+                className="hover:text-black duration-300"
+              >
+                <GrLinkedinOption />
+              </a>
+            </div>
           </div>
         </div>
       </div>

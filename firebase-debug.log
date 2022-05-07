@@ -1,0 +1,25 @@
+[debug] [2022-05-06T14:06:53.605Z] ----------------------------------------------------------------------
+[debug] [2022-05-06T14:06:53.608Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\HC\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-05-06T14:06:53.609Z] CLI Version:   10.8.0
+[debug] [2022-05-06T14:06:53.609Z] Platform:      win32
+[debug] [2022-05-06T14:06:53.609Z] Node Version:  v16.13.1
+[debug] [2022-05-06T14:06:53.614Z] Time:          Fri May 06 2022 20:06:53 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-05-06T14:06:53.614Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-06T14:06:53.710Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-06T14:06:53.711Z] > authorizing via signed-in user (mdriazuddin417@gmail.com)
+[debug] [2022-05-06T14:06:53.711Z] [iam] checking project grocery-shop-52c48 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-06T14:06:53.713Z] > refreshing access token with scopes: []
+[debug] [2022-05-06T14:06:53.714Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-05-06T14:07:17.045Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Fri, 06 May 2022 14:07:18 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-05-06T14:07:17.071Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/grocery-shop-52c48:testIamPermissions [none]
+[debug] [2022-05-06T14:07:17.071Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/grocery-shop-52c48:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-06T14:07:28.463Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/grocery-shop-52c48:testIamPermissions
+[debug] [2022-05-06T14:07:28.465Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/grocery-shop-52c48 [none]
+[debug] [2022-05-06T14:07:58.478Z] Timeout reached making request to https://firebase.googleapis.com/v1beta1/projects/grocery-shop-52c48
+[debug] [2022-05-06T14:08:08.383Z] FirebaseError: Timeout reached making request to https://firebase.googleapis.com/v1beta1/projects/grocery-shop-52c48
+    at RetryOperation._fn (C:\Users\HC\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:236:35)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project grocery-shop-52c48. Please make sure the project exists and your account has permission to access it.

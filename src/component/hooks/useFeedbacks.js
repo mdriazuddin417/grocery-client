@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const useFeedbacks = () => {
   const [feedbacks, setFeedbacks] = useState([]);
   useEffect(() => {
-    fetch("https://grocery-shop2.herokuapp.com/feedbacks")
+    fetch("http://localhost:5000/feedbacks")
       .then((res) => res.json())
       .then((data) => setFeedbacks(data));
   }, []);

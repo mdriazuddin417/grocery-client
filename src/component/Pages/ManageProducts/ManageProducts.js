@@ -1,18 +1,17 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import useProducts from "../../hooks/useProducts";
+
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import ManageSingleProduct from "../ManageSingeProduct/ManageSingleProduct";
 
-const Manageinventory = () => {
+const ManageProducts = () => {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(10);
   const [pageCount, setPageCount] = useState(0);
 
   useEffect(() => {
-    const url = `https://grocery-shop2.herokuapp.com/products?page=${page}&size=${size}`;
+    const url = `http://localhost:5000/products?page=${page}&size=${size}`;
 
     fetch(url)
       .then((res) => res.json())
@@ -20,7 +19,7 @@ const Manageinventory = () => {
   }, [page, size]);
 
   useEffect(() => {
-    fetch("https://grocery-shop2.herokuapp.com/count")
+    fetch("http://localhost:5000/count")
       .then((res) => res.json())
       .then((data) => {
         const count = data.count;
@@ -28,7 +27,7 @@ const Manageinventory = () => {
         setPageCount(page);
       });
   }, []);
-  console.log(pageCount);
+
   return (
     <div className="max-w-7xl mx-auto lg:px-12 lg:py-15 p-5 ">
       <PageTitle title="Manage Product"></PageTitle>
@@ -58,8 +57,9 @@ const Manageinventory = () => {
         </tbody>
       </table>
       <div className="flex justify-center my-8">
-        {[...Array(pageCount).keys()].map((number) => (
+        {[...Array(pageCount).keys()].map((number, index) => (
           <button
+            key={index}
             className={
               page === number
                 ? "bg-[#183fee] p-2 border rounded-md shadow m-2 text-white focus:ring-3 ring-offset-1 ring-blue-400 "
@@ -86,4 +86,4 @@ const Manageinventory = () => {
   );
 };
 
-export default Manageinventory;
+export default ManageProducts;
