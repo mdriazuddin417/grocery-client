@@ -6,6 +6,7 @@ import PageTitle from "../../Shared/PageTitle/PageTitle";
 import { useForm } from "react-hook-form";
 import { FaFacebookF, FaGithub } from "react-icons/fa";
 import { GrLinkedinOption } from "react-icons/gr";
+import { toast } from "react-toastify";
 const CheckOut = () => {
   const { id } = useParams();
   const [product, setProduct] = useProductDetails(id);
@@ -32,6 +33,7 @@ const CheckOut = () => {
       })
       .then((data) => {
         setProduct(productInfo);
+        toast.success("Product Delivered Successfully !!");
       });
   };
 

@@ -7,15 +7,20 @@ import useProducts from "../../hooks/useProducts";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const ManageSingleProduct = ({ product }) => {
-  const [products, setProducts] = useProducts();
-
+  const [products, setProducts] = useState([]);
   const { name, price, selerName, text, image, quantity, _id } = product;
 
+  useEffect(() => {
+    fetch(" https://grocery-shop2.herokuapp.com/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
   //================confirm modal=====================
 
-  const handleDelete = async (id) => {
+  const handleDelete = (id) => {
     confirmAlert({
       message: "Are you sure ?",
       buttons: [
@@ -24,17 +29,21 @@ const ManageSingleProduct = ({ product }) => {
           onClick: async () => {
             const url = ` https://grocery-shop2.herokuapp.com/products/${id}`;
             await axios.delete(url).then((res) => {
-              const newProducts = products.filter(
-                (product) => product._id !== id
-              );
-              setProducts(newProducts);
-              window.location.reload();
+              if (res) {
+                toast.success("Items Delete Successfully !!");
+                const newProducts = products.filter(
+                  (product) => product._id !== id
+                );
+                setProducts(newProducts);
+                window.location.reload();
+              }
             });
           },
         },
         {
           label: "No",
           onClick: () => {
+            toast("No delete Items !");
             return;
           },
         },
