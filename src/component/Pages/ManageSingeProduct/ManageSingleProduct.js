@@ -22,7 +22,7 @@ const ManageSingleProduct = ({ product }) => {
         {
           label: "Yes",
           onClick: () => {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = ` https://grocery-shop2.herokuapp.com/products/${id}`;
             axios.delete(url).then((res) => {
               console.log(res);
               const newProducts = products.filter(

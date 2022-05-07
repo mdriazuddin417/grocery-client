@@ -12,7 +12,7 @@ const AddProduct = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    const url = `http://localhost:5000/products`;
+    const url = ` https://grocery-shop2.herokuapp.com/products`;
 
     const email = user?.email;
     const name = data.name;

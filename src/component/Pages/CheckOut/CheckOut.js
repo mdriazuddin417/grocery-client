@@ -24,7 +24,7 @@ const CheckOut = () => {
       text: text,
       quantity: newQuantity,
     };
-    const url = `http://localhost:5000/products/${id}`;
+    const url = ` https://grocery-shop2.herokuapp.com/products/${id}`;
 
     await axios
       .put(url, {
@@ -49,7 +49,7 @@ const CheckOut = () => {
       quantity: increaseQuantity,
     };
 
-    const url = `http://localhost:5000/products/${id}`;
+    const url = ` https://grocery-shop2.herokuapp.com/products/${id}`;
 
     await axios
       .put(url, {

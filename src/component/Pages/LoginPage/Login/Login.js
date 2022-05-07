@@ -34,7 +34,7 @@ const Login = () => {
     await signInWithEmailAndPassword(email, password);
 
     await axios
-      .post("http://localhost:5000/login", {
+      .post(" https://grocery-shop2.herokuapp.com/login", {
         email,
       })
       .then((res) => {

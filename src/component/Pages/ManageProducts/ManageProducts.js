@@ -11,7 +11,7 @@ const ManageProducts = () => {
   const [pageCount, setPageCount] = useState(0);
 
   useEffect(() => {
-    const url = `http://localhost:5000/products?page=${page}&size=${size}`;
+    const url = ` https://grocery-shop2.herokuapp.com/products?page=${page}&size=${size}`;
 
     fetch(url)
       .then((res) => res.json())
@@ -19,7 +19,7 @@ const ManageProducts = () => {
   }, [page, size]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/count")
+    fetch(" https://grocery-shop2.herokuapp.com/count")
       .then((res) => res.json())
       .then((data) => {
         const count = data.count;
