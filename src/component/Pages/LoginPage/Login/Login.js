@@ -16,7 +16,7 @@ import PageTitle from "../../../Shared/PageTitle/PageTitle";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending, ResetError] =
@@ -40,6 +40,7 @@ const Login = () => {
       .then((res) => {
         localStorage.setItem("accessToken", res.data.accessToken);
       });
+    reset();
   };
 
   if (token) {

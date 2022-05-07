@@ -9,6 +9,12 @@ function CustomLink({ children, to, ...props }) {
       <Link
         style={{
           fontWeight: match ? "bold" : "400",
+          textDecoration: match ? "underline" : "",
+          textDecorationColor: match ? "#89c74a" : "",
+          backgroundColor: match ? "#89c74a" : "",
+          padding: match ? "5px 10px" : "",
+          color: match ? "white" : "",
+          borderRadius: match ? "5px" : "",
         }}
         to={to}
         {...props}

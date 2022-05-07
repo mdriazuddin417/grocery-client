@@ -13,7 +13,7 @@ import useToken from "../../../../Api/useToken";
 import PageTitle from "../../../Shared/PageTitle/PageTitle";
 
 const SignUp = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [errors, setErrors] = useState("");
 
   const navigate = useNavigate();
@@ -40,6 +40,7 @@ const SignUp = () => {
     } else {
       return setErrors("Password not match ?");
     }
+    reset();
   };
 
   if (token) {

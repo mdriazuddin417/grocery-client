@@ -9,7 +9,7 @@ import PageTitle from "../../Shared/PageTitle/PageTitle";
 const AddProduct = () => {
   const [user] = useAuthState(auth);
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
     const url = ` https://grocery-shop2.herokuapp.com/products`;
@@ -34,7 +34,7 @@ const AddProduct = () => {
 
     axios.post(url, { product }).then((res) => {
       toast.success("New product added");
-      console.log(res);
+      reset();
     });
   };
 
