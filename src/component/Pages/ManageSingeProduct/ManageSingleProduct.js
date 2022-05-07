@@ -15,20 +15,18 @@ const ManageSingleProduct = ({ product }) => {
 
   //================confirm modal=====================
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     confirmAlert({
       message: "Are you sure ?",
       buttons: [
         {
           label: "Yes",
-          onClick: () => {
+          onClick: async () => {
             const url = ` https://grocery-shop2.herokuapp.com/products/${id}`;
-            axios.delete(url).then((res) => {
-              console.log(res);
+            await axios.delete(url).then((res) => {
               const newProducts = products.filter(
                 (product) => product._id !== id
               );
-              console.log(newProducts);
               setProducts(newProducts);
               window.location.reload();
             });
