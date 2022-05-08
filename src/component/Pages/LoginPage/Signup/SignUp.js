@@ -16,6 +16,7 @@ const SignUp = () => {
   const [open, setOpen] = useState(false);
   const { register, handleSubmit, reset } = useForm();
   const [errors, setErrors] = useState("");
+  const [passErrors, setPassErrors] = useState("");
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -31,15 +32,22 @@ const SignUp = () => {
     const email = data.email;
     const password = data.password;
     const confirmPass = data.confirmPass;
-
+    const regx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9_])/;
+    if (!regx.test(password)) {
+      setPassErrors("");
+      setPassErrors("uppercase, lowercase, number and special characters ");
+      return;
+    }
     if (password === confirmPass) {
       createUserWithEmailAndPassword(email, password);
-      toast("Send email verification");
-      await updateProfile({ displayName: name });
 
+      await updateProfile({ displayName: name });
+      toast("Send email verification");
       setErrors("");
     } else {
-      return setErrors("Password not match ?");
+      setPassErrors("");
+      setErrors("Password not match ?");
+      return;
     }
     reset();
   };
@@ -47,6 +55,9 @@ const SignUp = () => {
   if (token) {
     toast.success("Creat an account successfully!");
     navigate(from, { replace: true });
+  }
+  if (error1) {
+    console.log(error1.message);
   }
 
   return (
@@ -71,11 +82,14 @@ const SignUp = () => {
           />
           <div className="relative">
             <input
-              {...register("password", { required: true })}
+              {...register("password", {
+                required: true,
+              })}
               className="w-full rounded-full py-3 px-5 bg-white shadow  focus:outline-lime-300 duration-300  outline-none "
               placeholder="Password"
               type={open ? "text" : "password"}
             />
+
             {open ? (
               <BiShow
                 className="absolute top-3 right-2 text-2xl"
@@ -88,7 +102,9 @@ const SignUp = () => {
               />
             )}
           </div>
+          <p className="text-red-600 ">{passErrors}</p>
           <input
+            type={"password"}
             {...register("confirmPass", { required: true })}
             className="w-full rounded-full py-3 px-5 bg-white shadow  focus:outline-lime-300 duration-300  outline-none"
             placeholder="Confirm Password"
@@ -96,7 +112,7 @@ const SignUp = () => {
 
           <div className="flex justify-between items-center">
             <input type="submit" className="btn2 btn" value={"Sign Up"} />
-            {(loading || updating) && <Loading />}
+            {loading && <Loading />}
             <p className="text-red-600 ">{errors}</p>
           </div>
         </form>
