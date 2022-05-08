@@ -13,9 +13,28 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const [user] = useAuthState(auth);
 
+  window.addEventListener("scroll", function () {
+    if (window.pageYOffset > 100) {
+      document
+        .getElementById("navbar")
+        .classList.add("fixed-top", "shadow", "bg-opacity-90");
+    } else {
+      document
+        .getElementById("navbar")
+        .classList.remove("fixed-top", "shadow", "bg-opacity-90");
+    }
+  });
+  window.addEventListener("scroll", function () {
+    if (window.pageYOffset > 100) {
+      document.getElementById("top").classList.add("none");
+    } else {
+      document.getElementById("top").classList.remove("none");
+    }
+  });
+
   return (
     <div className="">
-      <div className=" bg-color1">
+      <div className=" bg-color1 " id="top">
         <div className="lg:flex justify-between px-12 max-w-7xl mx-auto py-2  text-white items-center grid md:grid-cols-2 grid-cols-1 ">
           <div className=" lg:flex grid grid-cols-1  ">
             <div className="flex lg:border-r-2 px-2 items-center hover:text-black duration-300">
@@ -45,7 +64,10 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="text-gray-600 body-font nav ">
+      <div
+        className="text-gray-600 body-font  bg-white duration-200"
+        id="navbar"
+      >
         <div className="max-w-7xl mx-auto lg:flex lg:py-2">
           <div className="flex  justify-between px-12 py-5 items-center ">
             <Link to={"/"}>
@@ -62,7 +84,7 @@ const Header = () => {
           </div>
 
           <nav
-            className={`md:ml-auto   lg:flex flex-wrap items-center text-base justify-center text-center space-y-3 lg:space-y-0 px-20 py-5 lg:px-0 lg:py-0 lg:bg-white bg-[#89c74a]  ${
+            className={`md:ml-auto   lg:flex flex-wrap items-center text-base justify-center text-center space-y-3 lg:space-y-0 px-20 py-5 lg:px-0 lg:py-0 lg:bg-transparent bg-[#89c74a]  ${
               !open ? "hidden" : " block"
             }`}
           >
@@ -71,6 +93,9 @@ const Header = () => {
             </CustomLink>
             <CustomLink to={"/blog"} className="mr-5 ">
               Blog
+            </CustomLink>
+            <CustomLink to={"/contact"} className="mr-5 ">
+              Contact
             </CustomLink>
 
             {user ? (
@@ -89,9 +114,9 @@ const Header = () => {
                 </button>
               </>
             ) : (
-              <Link to={"/login"} className="mr-5 ">
+              <CustomLink to={"/login"} className="mr-5 ">
                 Login
-              </Link>
+              </CustomLink>
             )}
           </nav>
         </div>

@@ -13,8 +13,9 @@ import axios from "axios";
 import useToken from "../../../../Api/useToken";
 import { async } from "@firebase/util";
 import PageTitle from "../../../Shared/PageTitle/PageTitle";
-
+import { BiShow, BiHide } from "react-icons/bi";
 const Login = () => {
+  const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
   const { register, handleSubmit, reset } = useForm();
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -85,12 +86,27 @@ const Login = () => {
             {...register("email", { required: true })}
             className="w-full rounded-full py-3 px-5 bg-white  shadow  focus:outline-lime-300 duration-300 outline-none"
             placeholder="Email"
+            type={"email"}
           />
-          <input
-            {...register("password", { required: true })}
-            className="w-full rounded-full py-3 px-5 bg-white shadow  focus:outline-lime-300 duration-300  outline-none"
-            placeholder="Password"
-          />
+          <div className="relative">
+            <input
+              {...register("password", { required: true })}
+              className="w-full rounded-full py-3 px-5 bg-white shadow  focus:outline-lime-300 duration-300  outline-none "
+              placeholder="Password"
+              type={open ? "text" : "password"}
+            />
+            {open ? (
+              <BiShow
+                className="absolute top-3 right-2 text-2xl"
+                onClick={() => setOpen(!open)}
+              />
+            ) : (
+              <BiHide
+                className="absolute top-3 right-2 text-2xl"
+                onClick={() => setOpen(!open)}
+              />
+            )}
+          </div>
 
           <div className="flex justify-between items-center">
             <input type="submit" className="btn2  " value={"Sign In"} />

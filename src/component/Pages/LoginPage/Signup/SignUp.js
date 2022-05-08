@@ -11,8 +11,9 @@ import Loading from "../../../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import useToken from "../../../../Api/useToken";
 import PageTitle from "../../../Shared/PageTitle/PageTitle";
-
+import { BiShow, BiHide } from "react-icons/bi";
 const SignUp = () => {
+  const [open, setOpen] = useState(false);
   const { register, handleSubmit, reset } = useForm();
   const [errors, setErrors] = useState("");
 
@@ -60,17 +61,33 @@ const SignUp = () => {
             {...register("name", { required: true })}
             className="w-full rounded-full py-3 px-5 bg-white  shadow  focus:outline-lime-300 duration-300 outline-none"
             placeholder="Full Name"
+            type={"text"}
           />
           <input
             {...register("email", { required: true })}
             className="w-full rounded-full py-3 px-5 bg-white  shadow  focus:outline-lime-300 duration-300 outline-none"
             placeholder="Email"
+            type={"email"}
           />
-          <input
-            {...register("password", { required: true })}
-            className="w-full rounded-full py-3 px-5 bg-white  shadow  focus:outline-lime-300 duration-300 outline-none"
-            placeholder="Password"
-          />
+          <div className="relative">
+            <input
+              {...register("password", { required: true })}
+              className="w-full rounded-full py-3 px-5 bg-white shadow  focus:outline-lime-300 duration-300  outline-none "
+              placeholder="Password"
+              type={open ? "text" : "password"}
+            />
+            {open ? (
+              <BiShow
+                className="absolute top-3 right-2 text-2xl"
+                onClick={() => setOpen(!open)}
+              />
+            ) : (
+              <BiHide
+                className="absolute top-3 right-2 text-2xl"
+                onClick={() => setOpen(!open)}
+              />
+            )}
+          </div>
           <input
             {...register("confirmPass", { required: true })}
             className="w-full rounded-full py-3 px-5 bg-white shadow  focus:outline-lime-300 duration-300  outline-none"

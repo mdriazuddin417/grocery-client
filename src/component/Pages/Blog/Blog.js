@@ -3,13 +3,13 @@ import PageTitle from "../../Shared/PageTitle/PageTitle";
 
 const Blog = () => {
   return (
-    <div className="bg-lime-100">
+    <div className="">
       <div className="max-w-7xl mx-auto lg:px-12 lg:py-10 p-54">
         <PageTitle title="Blog"></PageTitle>
         <h2 className="header mb-16">Blog</h2>
         <div className="flex justify-center">
           <div className="grid lg:grid-cols-2 md:grid-cols-3 grid-cols-1 lg:gap-x-32 gap-5 lg:gap-y-10 m-5">
-            <div className="h-full shadow-lg rounded-lg p-10 duration-500 hover:scale-110 overflow-hidden">
+            <div className="h-full  rounded-lg p-10 duration-500 hover:scale-105overflow-hidden border shadow-md">
               <h4 className="text-xl mb-3 font-semibold">
                 Difference between javascript and nodejs?
               </h4>
@@ -26,7 +26,7 @@ const Blog = () => {
                 we make use of in the header section of a JWT.
               </p>
             </div>
-            <div className="h-full shadow-lg rounded-lg p-10 duration-500 hover:scale-110 overflow-hidden">
+            <div className="h-full border shadow-md rounded-lg p-10 duration-500 hover:scale-105 overflow-hidden">
               <h4 className="text-xl mb-3 font-semibold">
                 What is the purpose of jwt and how does it work?
               </h4>
@@ -38,7 +38,7 @@ const Blog = () => {
                 signature. This three parts are separated by dots(.).
               </p>
             </div>
-            <div className="h-full shadow-lg rounded-lg p-10 duration-500 hover:scale-110 overflow-hidden">
+            <div className="h-full border shadow-md rounded-lg p-10 duration-500 hover:scale-105 overflow-hidden">
               <h4 className="text-xl mb-3 font-semibold">
                 Differences between sql and nosql databases ?
               </h4>
@@ -52,7 +52,7 @@ const Blog = () => {
                 hierarchical data storage.
               </p>
             </div>
-            <div className="h-full shadow-lg rounded-lg p-10 duration-500 hover:scale-110 overflow-hidden">
+            <div className="h-full border shadow-md rounded-lg p-10 duration-500 hover:scale-105 overflow-hidden">
               <h4 className="text-xl mb-3 font-semibold">
                 When should you use nodejs and when should you use mongodb?
               </h4>
