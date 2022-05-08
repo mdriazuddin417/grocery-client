@@ -17,7 +17,7 @@ const ManageSingleProduct = ({ product }) => {
     fetch(" https://grocery-shop2.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, []);
+  }, [product]);
   //================confirm modal=====================
 
   const handleDelete = (id) => {
@@ -35,7 +35,6 @@ const ManageSingleProduct = ({ product }) => {
                   (product) => product._id !== id
                 );
                 setProducts(newProducts);
-                window.location.reload();
               }
             });
           },
@@ -54,7 +53,7 @@ const ManageSingleProduct = ({ product }) => {
   return (
     <tr className="border border-[#e9e9e9]">
       <td>
-        <img src={image} alt="" />
+        <img src={image} alt="" className="w-[150px] h-[150px] rounded" />
       </td>
       <td className="lg:text-2xl font-semibold">{name}</td>
       <td className="lg:text-2xl font-semibold">${price}</td>
