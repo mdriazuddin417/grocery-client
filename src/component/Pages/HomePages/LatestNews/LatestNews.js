@@ -36,7 +36,7 @@ const LatestNews = () => {
             <p>
               Tapping on the rising consumer consciousness towards food quality,
               a Bengaluru-based agritech firm is providing greenhouse produce
-              through managed farms in partnership with small farm holders.
+              through managed farms in partnership with small farm holders. ...
             </p>
             <button className="btn btn2 flex justify-around items-center">
               Read more{" "}
@@ -67,8 +67,7 @@ const LatestNews = () => {
             <p>
               LT Foods expects to spend 4% of branded sales on marketing which
               is 75% of its total revenue. A report by RedSeer forecasted the
-              ready-to-cook market in India to grow 18% to reach Rs 4800 crore
-              by 2024.
+              ready-to-cook market in India to grow 18% to reach Rs 4800 ...
             </p>
             <button className="btn btn2 flex justify-around items-center">
               Read more{" "}
@@ -99,8 +98,7 @@ const LatestNews = () => {
             <p>
               The main goods which recorded healthy growth in exports include
               oil cake meal, oilseeds, fruit pulps and purees, cereals and
-              millets, spices and condiments, tea, dry fruits, sugar, pulses,
-              coffee, and essential oil.
+              millets, spices and condiments, tea, dry fruits, sugar, ...
             </p>
             <button className="btn btn2 flex justify-around items-center">
               Read more{" "}

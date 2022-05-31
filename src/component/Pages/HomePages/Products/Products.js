@@ -12,7 +12,7 @@ const Products = () => {
         Fresh, healthy and full of Goodness. View our wide range of fresh
         fruits.
       </p>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 ">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 product-card ">
         {products.slice(0, 6).map((product) => (
           <Product key={product._id} product={product}></Product>
         ))}

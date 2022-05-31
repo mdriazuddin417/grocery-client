@@ -19,7 +19,7 @@ import Blog from "./component/Pages/Blog/Blog";
 import Contact from "./component/Pages/Contact/Contact";
 function App() {
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
