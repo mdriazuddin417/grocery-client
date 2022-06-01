@@ -33,10 +33,10 @@ const Banner = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper swiper h-[80vh]"
+        className="mySwiper swiper swiper-height"
       >
         <SwiperSlide className="relative">
-          <img src={bg1} alt="" />
+          <img src={bg1} alt="" className="" />
           <div className="absolute lg:top-20 lg:right-44 bg-[#ffffff95] w-[200px] right-5 top-3  lg:w-[400px] rounded-lg  lg:space-y-8 space-y-2 text-left lg:px-20 lg:py-10 p-5">
             <p className="text-xl content-header">100% Healthy & Affordable</p>
             <h2 className="header-font lg:text-5xl text-2xl font-bold text-[#89c74a]">
@@ -51,7 +51,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <img src={bg2} alt="" />
+          <img src={bg2} alt="" className="" />
           <div className="absolute lg:top-20 lg:right-44 bg-[#ffffff95]  lg:w-[500px] rounded-lg  lg:space-y-8 space-y-1 text-left lg:px-20 lg:py-10 w-[200px] right-5 top-3 p-4">
             <p className="lg:text-xl text-sm  content-header">
               Natural Health Care Ingredients
@@ -68,7 +68,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <img src={bg3} alt="" />
+          <img src={bg3} alt="" className="" />
           <div className="absolute lg:bottom-1/4 bottom-10 lg:left-1/2 left-20 bg-[#ffffff95]   rounded-lg  lg:space-y-8  space-y-2 lg:px-10 lg:py-5 p-4 lg:mr-7 mr-2 text-center">
             <p className="lg:text-3xl text-2xl content-header  ">
               Grocery shop
