@@ -30,7 +30,7 @@ const Product = ({ product }) => {
         </span>
       </p>
 
-      <div className="absolute bottom-4 left-32">
+      <div className="absolute bottom-4 left-[30%]">
         <button
           className="btn btn2"
           onClick={() => {
