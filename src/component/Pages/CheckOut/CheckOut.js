@@ -42,6 +42,7 @@ const CheckOut = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = async (data) => {
+    
     const increaseQuantity = parseInt(data.increase) + parseInt(quantity);
     const productInfo = {
       name: name,
@@ -71,6 +72,7 @@ const CheckOut = () => {
         <div className="w-full h-[400px] rounded">
           <img src={image} alt="" className="h-full w-full" />
         </div>
+        
         <div className="space-y-5">
           <h3 className="header-font text-4xl font-semibold">{name}</h3>
           <p>{text}</p>
@@ -78,7 +80,7 @@ const CheckOut = () => {
             Price :{" "}
             <span className="text-[#89c74a] ml-14 text-2xl">
               <span>$ </span>
-              {price} /piece
+              {price} /kg
             </span>
           </p>
           <p className="font-bold ">
@@ -88,7 +90,7 @@ const CheckOut = () => {
               {newPrice}
             </span>
           </p>
-          <p className="flex  items-center font-bold">
+          {/* <p className="flex  items-center font-bold">
             Size :
             <div className="flex gap-4 justify-center items-center ml-16">
               <button className="border rounded-lg focus:text-[#89c74a]  border-gray focus:border-[#89c74a] p-2 ">
@@ -101,7 +103,7 @@ const CheckOut = () => {
                 1kg
               </button>
             </div>
-          </p>
+          </p> */}
           <p className="font-bold">
             Type : <span className="text-[#89c74a] text-xl ml-14">Fruits</span>
           </p>
@@ -121,6 +123,7 @@ const CheckOut = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 type="number"
+                required
                 {...register("increase", { min: 1 })}
                 className="focus:outline-1 outline-lime-400 border rounded-lg border-gray-300 py-1 pl-2"
               />
