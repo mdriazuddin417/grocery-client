@@ -12,6 +12,7 @@ const CheckOut = () => {
   const [product, setProduct] = useProductDetails(id);
 
   let { name, image, price, selerName, text, quantity } = product;
+  const newPrice = parseInt(price) * parseInt(quantity);
 
   const handleDeliveredBtn = async () => {
     let deliver = 1;
@@ -67,17 +68,24 @@ const CheckOut = () => {
     <div className="max-w-7xl mx-auto lg:pt-20 lg:px-12 lg:pb-12">
       <PageTitle title="CheckOut"></PageTitle>
       <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-10">
-        <div>
-          <img src={image} alt="" />
+        <div className="w-full h-[400px] rounded">
+          <img src={image} alt="" className="h-full w-full" />
         </div>
-        <div className="space-y-7">
+        <div className="space-y-5">
           <h3 className="header-font text-4xl font-semibold">{name}</h3>
           <p>{text}</p>
           <p className="font-bold ">
             Price :{" "}
             <span className="text-[#89c74a] ml-14 text-2xl">
               <span>$ </span>
-              {price}
+              {price} /piece
+            </span>
+          </p>
+          <p className="font-bold ">
+            New Price :{" "}
+            <span className="text-[#89c74a] ml-14 text-2xl">
+              <span>$ </span>
+              {newPrice}
             </span>
           </p>
           <p className="flex  items-center font-bold">

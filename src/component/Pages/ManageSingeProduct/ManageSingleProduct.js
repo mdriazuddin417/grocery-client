@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
-
-import useProducts from "../../hooks/useProducts";
-
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const ManageSingleProduct = ({ product }) => {
-  const [products, setProducts] = useState([]);
+const ManageSingleProduct = ({ product,setProducts,products }) => {
+
   const { name, price, selerName, text, image, quantity, _id } = product;
 
   useEffect(() => {
     fetch(" https://grocery-shop2.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, [product]);
+  }, [product,setProducts]);
   //================confirm modal=====================
 
   const handleDelete = (id) => {

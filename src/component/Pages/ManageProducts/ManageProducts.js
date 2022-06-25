@@ -52,6 +52,9 @@ const ManageProducts = () => {
             <ManageSingleProduct
               key={product._id}
               product={product}
+              products={products}
+              setProducts={setProducts}
+
             ></ManageSingleProduct>
           ))}
         </tbody>
